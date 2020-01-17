@@ -29,7 +29,7 @@ run apt-get upgrade \
     libqt5webkit5-dev \
     qtquickcontrols2-5-dev \ 
     libqt5opengl5-dev
-    
+        
 env PREFIX=/home/musescore/install-dir \
     BUILD_LAME="ON" \
     BUILD_PULSEAUDIO="ON" \
@@ -42,8 +42,8 @@ env PREFIX=/home/musescore/install-dir \
     NO_RPATH="FALSE"
 
 
-WORKDIR /home/musescore/build-dir 
-CMD cmake -DCMAKE_BUILD_TYPE=RELEASE	       \
+workdir /home/musescore/build-dir 
+cmd cmake -DCMAKE_BUILD_TYPE=RELEASE	       \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}"       \
         -DMSCORE_INSTALL_SUFFIX=""               \
         -DMUSESCORE_LABEL=""                     \

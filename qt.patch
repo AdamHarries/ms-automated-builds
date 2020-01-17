@@ -1,0 +1,13 @@
+diff --git a/build/FindQt5.cmake b/build/FindQt5.cmake
+index 3728f6b71..396b9108b 100644
+--- a/build/FindQt5.cmake
++++ b/build/FindQt5.cmake
+@@ -56,7 +56,7 @@ set(_qmake_vars
+     QT_INSTALL_TRANSLATIONS
+     )
+ foreach(_var ${_qmake_vars})
+-    execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} "-query" ${_var}
++    execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} "-qt=qt5" "-query" ${_var}
+         RESULT_VARIABLE _return_val
+         OUTPUT_VARIABLE _out
+         OUTPUT_STRIP_TRAILING_WHITESPACE

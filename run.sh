@@ -1,17 +1,20 @@
 #!/bin/bash
-set -e 
-set +x
+# set -e 
+set -x
 
 # Check to see if we have a musescore git repository
 musescore_source_dir="${1:-MuseScore}"
 musescore_build_dir="${2:-$(pwd)/musescore_build}"
 musescore_install_dir="${3:-$(pwd)/musescore_install}"
 
+qt_patch="${4:-$(pwd)/qt.patch}"
+
 if [ -d $musescore_source_dir ]; then 
     pushd $musescore_source_dir
     git status
     if [ $? ]; then 
         echo "Found musescore git directory successfully: ${musescore_source_dir}"
+        git apply --check ${qt_patch} 
     else 
         echo "Please specify a *git* directory with the MuseScore source"
     fi 
