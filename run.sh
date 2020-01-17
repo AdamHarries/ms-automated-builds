@@ -34,8 +34,4 @@ docker build -t ms-buildtool .
 # Run the dockerfile with specific linked folders. 
 docker run -it -v ${musescore_source_dir}:/home/musescore/source-dir -v ${musescore_build_dir}:/home/musescore/build-dir -v ${musescore_install_dir}:/home/musescore/install-dir ms-buildtool
 
-
-# \ 
-#     -v "$musescore_source_dir:/home/musescore/source-dir" \
-#     -v "./musescore_build:/home/musescore/build-dir" \
-#     -v "./musescore_install:/home/musescore/install-dir" \
+sudo chown adam -R musescore_install 
